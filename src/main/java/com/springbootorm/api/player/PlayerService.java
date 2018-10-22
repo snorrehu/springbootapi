@@ -25,17 +25,17 @@ public class PlayerService {
     }
 
     //Read one
-    public Player getPlayer(int id){
+    public Player getPlayer(Integer id){
         return playerRepository.findById(id).get();
     }
 
     //Update
-    public void updatePlayer(Player player, int id) {
+    public void updatePlayer(Player player, Integer id) {
         playerRepository.save(player);
     }
 
     //Delete
-    public void deletePlayer(int id) {
+    public void deletePlayer(Integer id) {
         playerRepository.deleteById(id);
     }
 

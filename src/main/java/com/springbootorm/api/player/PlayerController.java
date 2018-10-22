@@ -25,19 +25,19 @@ public class PlayerController {
 
     //Request: Read one by id
     @RequestMapping("/players/{id}")
-    public Player readPlayer(@PathVariable int id){
+    public Player readPlayer(@PathVariable Integer id){
         return playerService.getPlayer(id);
     }
 
     //Request: Update
     @RequestMapping(method = RequestMethod.PUT, value = "/players/{id}")
-    public void updatePlayer(@RequestBody Player player, @PathVariable int id){
+    public void updatePlayer(@RequestBody Player player, @PathVariable Integer id){
         playerService.updatePlayer(player,id);
     }
 
     //Request: Delete by id
     @RequestMapping(method = RequestMethod.DELETE, value = "/players/{id}")
-    public void deletePlayer(@PathVariable int id){
+    public void deletePlayer(@PathVariable Integer id){
         playerService.deletePlayer(id);
     }
 
