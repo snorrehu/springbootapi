@@ -7,7 +7,7 @@ import java.util.Date;
 public class Person {
 
     @Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     //@Column(name = "id", updatable = false, nullable = false)
     private Integer person_id;
 
