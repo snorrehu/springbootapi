@@ -39,5 +39,9 @@ public class PersonService {
         personRepository.deleteById(id);
     }
 
+    //Check if exists
+    public boolean checkIfExists(Integer id){
+        return personRepository.existsById(id);
+    }
 
 }

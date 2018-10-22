@@ -9,7 +9,7 @@ import java.util.Date;
 public class Person {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer person_id;
 
     private Integer address_id;
