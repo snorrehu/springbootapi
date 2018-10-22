@@ -9,7 +9,7 @@ import java.util.Date;
 public class Person {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer person_id;
 
     private Integer address_id;
@@ -19,8 +19,8 @@ public class Person {
 
     public Person(){}
 
-    public Person(Integer address_id, String first_name, String last_name, Date date_of_birth) {
-        //this.person_id = person_id;
+    public Person(Integer person_id,Integer address_id, String first_name, String last_name, Date date_of_birth) {
+        this.person_id = person_id;
         this.address_id = address_id;
         this.first_name = first_name;
         this.last_name = last_name;
@@ -31,11 +31,9 @@ public class Person {
         return person_id;
     }
 
-    /*
     public void setPerson_id(Integer person_id) {
         this.person_id = person_id;
     }
-    */
 
     public Integer getAddress_id() {
         return address_id;

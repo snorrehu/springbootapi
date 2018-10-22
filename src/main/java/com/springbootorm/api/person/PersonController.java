@@ -17,6 +17,11 @@ public class PersonController {
     //Request: Create
     @RequestMapping(method = RequestMethod.POST, value = "/persons")
     public void createPerson(@RequestBody Person person){
+        int i = 0;
+        while(!personService.checkIfExists(i)){
+            i++;
+        }
+        person.setPerson_id(i);
         personService.addPerson(person);
     }
 
