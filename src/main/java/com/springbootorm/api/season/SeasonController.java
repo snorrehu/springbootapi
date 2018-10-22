@@ -35,7 +35,7 @@ public class SeasonController {
     }
 
     //Request: Delete by id
-    @RequestMapping(method = RequestMethod.DELETE, value = "/season/{id}")
+    @RequestMapping(method = RequestMethod.DELETE, value = "/seasons/{id}")
     public void deleteSeason(@PathVariable Integer id){
         seasonService.deleteSeason(id);
     }
