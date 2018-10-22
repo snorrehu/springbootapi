@@ -17,8 +17,8 @@ public class Person {
 
     public Person(){}
 
-    public Person(Integer person_id, Integer address_id, String first_name, String last_name, Date date_of_birth) {
-        this.person_id = person_id;
+    public Person(Integer address_id, String first_name, String last_name, Date date_of_birth) {
+        //this.person_id = person_id;
         this.address_id = address_id;
         this.first_name = first_name;
         this.last_name = last_name;

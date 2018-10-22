@@ -51,8 +51,8 @@ public class PersonController {
             e.printStackTrace();
         }
 
-        Person p = new Person(id, null ,"Undefined", "Undefined", d);
-        personService.updatePerson(p, id);
+        //Person p = new Person(id, null ,"Undefined", "Undefined", d);
+        //personService.updatePerson(p, id);
     }
 
 }
