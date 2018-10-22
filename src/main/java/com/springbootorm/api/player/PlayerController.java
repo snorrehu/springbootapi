@@ -15,13 +15,15 @@ public class PlayerController {
     @RequestMapping(method = RequestMethod.POST, value = "/players")
     public void createPlayer(@RequestBody Player player){
         boolean IdGenerator = true;
-        while(IdGenerator){
         int i = 0;
-        if(playerService.getPlayer(i) == null){
+        while(IdGenerator){
+        if(playerService.getPlayer(i) != null){
+            i++;
+        }
+        else {
             player.setPerson_id(i);
             IdGenerator = false;
         }
-        else i++;
         }
       }
 
