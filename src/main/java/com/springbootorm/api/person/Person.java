@@ -9,8 +9,7 @@ import java.util.Date;
 public class Person {
 
     @Id
-    @GenericGenerator(name="hilo-strategy", strategy = "hilo")
-    @GeneratedValue(generator = "hilo-strategy")
+    @GeneratedValue
     private Integer person_id;
 
     private Integer address_id;
