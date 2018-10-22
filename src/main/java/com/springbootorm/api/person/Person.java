@@ -1,13 +1,14 @@
 package com.springbootorm.api.person;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 public class Person {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", updatable = false, nullable = false)
     private Integer person_id;
 
     private Integer address_id;
@@ -29,9 +30,11 @@ public class Person {
         return person_id;
     }
 
+    /*
     public void setPerson_id(Integer person_id) {
         this.person_id = person_id;
     }
+    */
 
     public Integer getAddress_id() {
         return address_id;
