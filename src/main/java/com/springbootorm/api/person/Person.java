@@ -13,11 +13,11 @@ public class Person {
     private String address_id;
     private String first_name;
     private String last_name;
-    private Date date_of_birth;
+    private java.sql.Date date_of_birth;
 
     public Person(){};
 
-    public Person(Integer person_id, String address_id, String first_name, String last_name, Date date_of_birth) {
+    public Person(Integer person_id, String address_id, String first_name, String last_name, java.sql.Date date_of_birth) {
         this.person_id = person_id;
         this.address_id = address_id;
         this.first_name = first_name;
@@ -61,7 +61,7 @@ public class Person {
         return date_of_birth;
     }
 
-    public void setDate_of_birth(Date date_of_birth) {
+    public void setDate_of_birth(java.sql.Date date_of_birth) {
         this.date_of_birth = date_of_birth;
     }
 }
