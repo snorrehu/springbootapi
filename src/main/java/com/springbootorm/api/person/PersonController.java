@@ -3,6 +3,7 @@ package com.springbootorm.api.person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -38,8 +39,14 @@ public class PersonController {
     //Request: Delete by id
     @RequestMapping(method = RequestMethod.DELETE, value = "/persons/{id}")
     public void deletePerson(@PathVariable Integer id){
-        personService.getPerson(id);
-        personService.updatePerson();
+        Person undefinedPerson = new Person();
+        undefinedPerson.setAddress_id(null);
+        undefinedPerson.setFirst_name("undefined");
+        undefinedPerson.setLast_name("undefined");
+        undefinedPerson.setPerson_id(id);
+        Date date = new Date(1111,11,11);
+        undefinedPerson.setDate_of_birth(date);
+        personService.updatePerson(undefinedPerson,id);
     }
 
 }
