@@ -17,7 +17,7 @@ public class PlayerController {
         boolean IdGenerator = true;
         int i = 0;
         while(IdGenerator){
-        if(playerService.getPlayer(i) == undefined){
+        if(playerService.getPlayer(i) == null){
             player.setPerson_id(i);
             IdGenerator = false;
         }
