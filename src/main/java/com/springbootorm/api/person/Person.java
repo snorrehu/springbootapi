@@ -10,14 +10,14 @@ public class Person {
     @Id
     private Integer person_id;
 
-    private String address_id;
+    private Integer address_id;
     private String first_name;
     private String last_name;
     private Date date_of_birth;
 
     public Person(){}
 
-    public Person(Integer person_id, String address_id, String first_name, String last_name, Date date_of_birth) {
+    public Person(Integer person_id, Integer address_id, String first_name, String last_name, Date date_of_birth) {
         this.person_id = person_id;
         this.address_id = address_id;
         this.first_name = first_name;
@@ -33,11 +33,11 @@ public class Person {
         this.person_id = person_id;
     }
 
-    public String getAddress_id() {
+    public Integer getAddress_id() {
         return address_id;
     }
 
-    public void setAddress_id(String address_id) {
+    public void setAddress_id(Integer address_id) {
         this.address_id = address_id;
     }
 
