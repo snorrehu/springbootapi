@@ -14,7 +14,17 @@ public class PlayerController {
     //Request: Create
     @RequestMapping(method = RequestMethod.POST, value = "/players")
     public void createPlayer(@RequestBody Player player){
-        playerService.addPlayer(player);
+        boolean IdGenerator = true;
+        while(IdGenerator){
+        int i = 0;
+        try {
+            player.setPerson_id(i);
+            playerService.addPlayer(player);
+            IdGenerator = false;
+        } catch (Exception e) {
+            i++;
+        }
+    }
     }
 
     //Request: Read all
