@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 public class PlayerController {
 
@@ -34,7 +35,6 @@ public class PlayerController {
     }
 
     //Request: Read one by id
-    @CrossOrigin
     @RequestMapping("/players/{id}")
     public Player readPlayer(@PathVariable Integer id){
         return playerService.getPlayer(id);

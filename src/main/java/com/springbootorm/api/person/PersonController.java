@@ -8,6 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+@CrossOrigin
 @RestController
 public class PersonController {
 
@@ -35,7 +36,6 @@ public class PersonController {
     }
 
     //Request: Read one by id
-    @CrossOrigin
     @RequestMapping("/persons/{id}")
     public Person readPerson(@PathVariable Integer id){
         return personService.getPerson(id);
