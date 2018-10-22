@@ -17,15 +17,13 @@ public class PlayerController {
         boolean IdGenerator = true;
         while(IdGenerator){
         int i = 0;
-        try {
+        if(playerService.getPlayer(i) == null){
             player.setPerson_id(i);
-            playerService.addPlayer(player);
             IdGenerator = false;
-        } catch (Exception e) {
-            i++;
         }
-    }
-    }
+        else i++;
+        }
+      }
 
     //Request: Read all
     @RequestMapping("/players")
