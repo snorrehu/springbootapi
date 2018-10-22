@@ -34,6 +34,7 @@ public class PlayerController {
     }
 
     //Request: Read one by id
+    @CrossOrigin
     @RequestMapping("/players/{id}")
     public Player readPlayer(@PathVariable Integer id){
         return playerService.getPlayer(id);
