@@ -38,7 +38,8 @@ public class PersonController {
     //Request: Delete by id
     @RequestMapping(method = RequestMethod.DELETE, value = "/persons/{id}")
     public void deletePerson(@PathVariable Integer id){
-        personService.deletePerson(id);
+        personService.getPerson(id);
+        personService.updatePerson();
     }
 
 }
