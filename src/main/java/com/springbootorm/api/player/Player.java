@@ -11,13 +11,13 @@ public class Player {
     @Id
     private Integer person_id;
 
-    private int team_id;
+    private Integer team_id;
     private String normal_position;
     private String number;
 
     public Player(){};
 
-    public Player(int person_id, int team_id, String normal_position, String number) {
+    public Player(Integer person_id, Integer team_id, String normal_position, String number) {
         this.person_id = person_id;
         this.team_id = team_id;
         this.normal_position = normal_position;
@@ -28,7 +28,7 @@ public class Player {
         return person_id;
     }
 
-    public void setPerson_id(int person_id) {
+    public void setPerson_id(Integer person_id) {
         this.person_id = person_id;
     }
 
@@ -36,7 +36,7 @@ public class Player {
         return team_id;
     }
 
-    public void setTeam_id(int team_id) {
+    public void setTeam_id(Integer team_id) {
         this.team_id = team_id;
     }
 
