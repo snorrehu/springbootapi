@@ -57,7 +57,7 @@ public class Person {
         this.last_name = last_name;
     }
 
-    public Date getDate_of_birth() {
+    public java.sql.Date getDate_of_birth() {
         return date_of_birth;
     }
 
