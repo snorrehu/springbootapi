@@ -17,11 +17,13 @@ public class PlayerController {
         boolean IdGenerator = true;
         int i = 0;
         while(IdGenerator){
-        if(playerService.getPlayer(i) == null){
+        if(playerService.getPlayer(i) != null){
+            i++;
+        }
+        else {
             player.setPerson_id(i);
             IdGenerator = false;
         }
-        else i++;
         }
       }
 
