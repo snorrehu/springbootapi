@@ -27,6 +27,7 @@ public class PersonController {
     //Request: Read one by id
     @RequestMapping("/persons/{id}")
     public Person readPerson(@PathVariable Integer id){
+        System.out.println(personService.getPerson(id).getDate_of_birth());
         return personService.getPerson(id);
     }
 

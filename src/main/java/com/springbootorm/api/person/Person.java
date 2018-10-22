@@ -15,7 +15,7 @@ public class Person {
     private String last_name;
     private java.sql.Date date_of_birth;
 
-    public Person(){};
+    public Person(){}
 
     public Person(Integer person_id, String address_id, String first_name, String last_name, java.sql.Date date_of_birth) {
         this.person_id = person_id;
