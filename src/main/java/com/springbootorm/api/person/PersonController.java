@@ -20,6 +20,8 @@ public class PersonController {
         int i = 0;
         while(!personService.checkIfExists(i)){
             i++;
+            System.out.println(i);
+            System.out.println(personService.checkIfExists(i));
         }
         person.setPerson_id(i);
         personService.addPerson(person);
