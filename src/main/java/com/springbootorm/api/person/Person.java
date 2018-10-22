@@ -1,5 +1,7 @@
 package com.springbootorm.api.person;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -7,7 +9,8 @@ import java.util.Date;
 public class Person {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GenericGenerator(name="hilo-strategy", strategy = "hilo")
+    @GeneratedValue(generator = "hilo-strategy")
     private Integer person_id;
 
     private Integer address_id;
