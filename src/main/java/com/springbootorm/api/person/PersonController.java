@@ -18,7 +18,8 @@ public class PersonController {
     @RequestMapping(method = RequestMethod.POST, value = "/persons")
     public void createPerson(@RequestBody Person person){
         int i = 0;
-        while(!personService.checkIfExists(i)){
+        System.out.println("checkIfExists: " + personService.checkIfExists(i));
+        while(personService.checkIfExists(i)){
             i++;
             System.out.println(i);
             System.out.println(personService.checkIfExists(i));
