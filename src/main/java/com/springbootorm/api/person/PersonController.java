@@ -49,6 +49,9 @@ public class PersonController {
         undefinedPerson.setDate_of_birth(date);
         personService.updatePerson(undefinedPerson,id);
         */
+        java.sql.Date d = new java.sql.Date(000000);
+        Person p = new Person(id, null ,"Undefined", "Undefined", d);
+        personService.updatePerson(p, id);
     }
 
 }
