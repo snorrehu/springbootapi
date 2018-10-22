@@ -3,7 +3,6 @@ package com.springbootorm.api.person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -49,7 +48,7 @@ public class PersonController {
         undefinedPerson.setDate_of_birth(date);
         personService.updatePerson(undefinedPerson,id);
         */
-        java.sql.Date d = new java.sql.Date(000000);
+        java.sql.Date d = new java.sql.Date(0000-00-00);
         Person p = new Person(id, null ,"Undefined", "Undefined", d);
         personService.updatePerson(p, id);
     }
