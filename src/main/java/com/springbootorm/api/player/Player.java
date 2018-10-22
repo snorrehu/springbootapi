@@ -1,14 +1,13 @@
 package com.springbootorm.api.player;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Player {
 
     @Id
+    private Integer player_id;
+
     private Integer person_id;
 
     private Integer team_id;
@@ -17,14 +16,23 @@ public class Player {
 
     public Player(){};
 
-    public Player(Integer person_id, Integer team_id, String normal_position, String number) {
+    public Player(Integer player_id,Integer person_id, Integer team_id, String normal_position, String number) {
+        this.player_id = player_id;
         this.person_id = person_id;
         this.team_id = team_id;
         this.normal_position = normal_position;
         this.number = number;
     }
 
-    public int getPerson_id() {
+    public Integer getPlayer_id() {
+        return player_id;
+    }
+
+    public void setPlayer_id(Integer player_id) {
+        this.player_id = player_id;
+    }
+
+    public Integer getPerson_id() {
         return person_id;
     }
 
@@ -32,7 +40,7 @@ public class Player {
         this.person_id = person_id;
     }
 
-    public int getTeam_id() {
+    public Integer getTeam_id() {
         return team_id;
     }
 
