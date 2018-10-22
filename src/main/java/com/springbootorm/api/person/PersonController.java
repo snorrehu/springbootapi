@@ -39,6 +39,7 @@ public class PersonController {
     //Request: Delete by id
     @RequestMapping(method = RequestMethod.DELETE, value = "/persons/{id}")
     public void deletePerson(@PathVariable Integer id){
+        /*
         Person undefinedPerson = new Person();
         undefinedPerson.setAddress_id(null);
         undefinedPerson.setFirst_name("undefined");
@@ -47,6 +48,7 @@ public class PersonController {
         Date date = new Date(1111,11,11);
         undefinedPerson.setDate_of_birth(date);
         personService.updatePerson(undefinedPerson,id);
+        */
     }
 
 }
