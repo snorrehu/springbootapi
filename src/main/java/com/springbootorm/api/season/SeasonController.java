@@ -3,6 +3,7 @@ package com.springbootorm.api.season;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @CrossOrigin
@@ -25,7 +26,7 @@ public class SeasonController {
 
     //Request: Read one by id
     @RequestMapping("/seasons/{id}")
-    public Season readSeason(@PathVariable Integer id){
+    public ArrayList<Season> readSeason(@PathVariable Integer id){
         return seasonService.getSeason(id);
     }
 
