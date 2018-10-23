@@ -43,4 +43,13 @@ public class SeasonController {
         seasonService.deleteSeason(id);
     }
 
+    //********************************CRUD LE'Special*******************************************************
+
+    /*
+    @RequestMapping(method = RequestMethod.GET, value = "/seasons/{id}/matches")
+    public void getMatchesInSeason(@PathVariable Integer id){
+        seasonService.getMatchesInSeason(id);
+    }
+    */
+
 }
