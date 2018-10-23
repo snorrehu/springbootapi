@@ -1,4 +1,4 @@
-package com.springbootorm.api.season;
+package com.springbootorm.api.location;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -7,34 +7,34 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class SeasonService {
+public class LocationService {
 
     @Autowired
-    private SeasonRepository seasonRepository;
+    private LocationRepository locationRepository;
 
-    public void addSeason(Season season) {
-        seasonRepository.save(season);
+    public void addLocation(Location location) {
+        locationRepository.save(location);
     }
 
-    public List<Season> getAllSeasons() {
-        List<Season> seasons = new ArrayList<>();
-        seasonRepository.findAll().forEach(seasons::add);
-        return seasons;
+    public List<Location> getAllLocations() {
+        List<Location> locations = new ArrayList<>();
+        locationRepository.findAll().forEach(locations::add);
+        return locations;
     }
 
     //Read one
-    public ArrayList<Season> getSeason(Integer id){
-        ArrayList<Season> seasonList = new ArrayList<>();
-        seasonList.add(seasonRepository.findById(id).get());
-        return seasonList;
+    public ArrayList<Location> getLocation(Integer id){
+        ArrayList<Location> locationList = new ArrayList<>();
+        locationList.add(locationRepository.findById(id).get());
+        return locationList;
     }
 
     //Update
-    public void updateSeason(Season season, Integer id) {
-        seasonRepository.save(season);
+    public void updateLocation(Location location, Integer id) {
+        locationRepository.save(location);
     }
 
-    public void deleteSeason(Integer id) {
-        seasonRepository.deleteById(id);
+    public void deleteLocation(Integer id) {
+        locationRepository.deleteById(id);
     }
 }
