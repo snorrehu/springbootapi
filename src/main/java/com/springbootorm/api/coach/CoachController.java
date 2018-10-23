@@ -50,17 +50,7 @@ public class CoachController {
     //Request: Delete by id
     @RequestMapping(method = RequestMethod.DELETE, value = "/coachs/{id}")
     public void deleteCoach(@PathVariable Integer id){
-
-        String sDate1="1111-11-11";
-        Date d= null;
-
-        try {
-            d = new SimpleDateFormat("yyyy-MM-dd").parse(sDate1);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-        //Coach p = new Coach(id, null ,"Undefined", "Undefined", d);
+        //Coach p = new Coach(id,);
         //coachService.updateCoach(p, id);
     }
 }
