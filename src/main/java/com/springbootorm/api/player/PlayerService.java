@@ -39,5 +39,9 @@ public class PlayerService {
         playerRepository.deleteById(id);
     }
 
+    //Check if exists
+    public boolean checkIfExists(Integer id){
+        return playerRepository.existsById(id);
+    }
 
 }

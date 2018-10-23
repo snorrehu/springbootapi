@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -37,7 +38,7 @@ public class PersonController {
 
     //Request: Read one by id
     @RequestMapping("/persons/{id}")
-    public Person readPerson(@PathVariable Integer id){
+    public ArrayList<Person> readPerson(@PathVariable Integer id){
         return personService.getPerson(id);
     }
 
