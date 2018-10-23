@@ -38,6 +38,11 @@ public class UserService {
         userRepository.deleteById(id);
     }
 
+    //Check if exists
+    public boolean checkIfExists(Integer id){
+        return userRepository.existsById(id);
+    }
+
     /*
     public List<Match> getMatchesInUser(Integer userId){
         return userRepository.findByUser_id(userId);

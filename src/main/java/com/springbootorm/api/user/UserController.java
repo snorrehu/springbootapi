@@ -16,6 +16,14 @@ public class UserController {
     //Request: Create
     @RequestMapping(method = RequestMethod.POST, value = "/users")
     public void createUser(@RequestBody User user){
+        int i = 0;
+        System.out.println("checkIfExists: " + userService.checkIfExists(i));
+        while(userService.checkIfExists(i)){
+            i++;
+            System.out.println(i);
+            System.out.println(userService.checkIfExists(i));
+        }
+        user.setUser_id(i);
         userService.addUser(user);
     }
 
