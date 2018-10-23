@@ -3,6 +3,7 @@ package com.springbootorm.api.person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,8 +26,10 @@ public class PersonService {
     }
 
     //Read one
-    public Person getPerson(Integer id){
-        return personRepository.findById(id).get();
+    public ArrayList<Person> getPerson(Integer id){
+        ArrayList<Person> personList = new ArrayList<>();
+        personList.add(personRepository.findById(id).get());
+        return personList;
     }
 
     //Update
