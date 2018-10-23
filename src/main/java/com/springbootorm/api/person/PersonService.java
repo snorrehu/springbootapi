@@ -34,6 +34,7 @@ public class PersonService {
 
     //Update
     public void updatePerson(Person person, Integer id) {
+        person.setPerson_id(id);
         personRepository.save(person);
     }
 
