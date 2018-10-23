@@ -13,15 +13,18 @@ public class Team {
     private Integer coach_id;
     private Integer owner_id;
     private Integer location_id;
+    private String name;
+
 
     public Team(){}
 
-    public Team(Integer team_id, Integer association_id, Integer coach_id, Integer owener_id,Integer location_id){
+    public Team(Integer team_id, Integer association_id, Integer coach_id, Integer owener_id,Integer location_id, String name){
         this.team_id = team_id;
         this.association_id = association_id;
         this.coach_id = coach_id;
         this.owner_id = owener_id;
         this.location_id = location_id;
+        this.name = name;
     }
 
 
@@ -65,5 +68,13 @@ public class Team {
 
     public void setLocation_id(Integer location_id) {
         this.location_id = location_id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
