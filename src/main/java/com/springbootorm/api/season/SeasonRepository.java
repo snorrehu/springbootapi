@@ -7,5 +7,5 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 public interface SeasonRepository extends CrudRepository<Season,Integer> {
-    public List<Match> findBySeason_id(Integer seasonId);
+    //public List<Match> findBySeason_id(Integer seasonId);
 }
