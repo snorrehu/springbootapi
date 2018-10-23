@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -37,7 +38,7 @@ public class MatchController {
 
     //Request: Read one by id
     @RequestMapping("/matches/{id}")
-    public Match readMatch(@PathVariable Integer id){
+    public ArrayList<Match> readMatch(@PathVariable Integer id){
         return matchService.getMatch(id);
     }
 
