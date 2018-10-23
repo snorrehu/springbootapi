@@ -20,7 +20,7 @@ public class Team {
         this.team_id = team_id;
         this.association_id = association_id;
         this.coach_id = coach_id;
-        this.owener_id = owener_id;
+        this.owner_id = owener_id;
         this.location_id = location_id;
     }
 
