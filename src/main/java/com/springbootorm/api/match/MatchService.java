@@ -25,8 +25,10 @@ public class MatchService {
     }
 
     //Read one
-    public Match getMatch(Integer id){
-        return matchRepository.findById(id).get();
+    public ArrayList<Match> getMatch(Integer id){
+        ArrayList<Match> matchList = new ArrayList<>();
+        matchList.add(matchRepository.findById(id).get());
+        return matchList;
     }
 
     //Update
