@@ -9,6 +9,7 @@ import java.util.List;
 @CrossOrigin(methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 @RestController
 public class UserController {
+
     @Autowired
     private UserService userService;
 
