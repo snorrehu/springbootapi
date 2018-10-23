@@ -23,6 +23,7 @@ public class SeasonController {
     public List<Season> getAllSeasons(){
         return seasonService.getAllSeasons();
     }
+    
 
     //Request: Read one by id
     @RequestMapping("/seasons/{id}")
@@ -40,6 +41,12 @@ public class SeasonController {
     @RequestMapping(method = RequestMethod.DELETE, value = "/seasons/{id}")
     public void deleteSeason(@PathVariable Integer id){
         seasonService.deleteSeason(id);
+    }
+
+    //********************************CRUD LE'Special*******************************************************
+    @RequestMapping(method = RequestMethod.GET, value = "/seasons/{id}/matches")
+    public void getMatchesInSeason(@PathVariable Integer id){
+        seasonService.getMatchesInSeason(id);
     }
 
 }

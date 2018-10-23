@@ -8,12 +8,22 @@ import java.util.Date;
 public class Season {
 
     @Id
-    private int season_id;
-
+    private Integer season_id;
     private Date start_date;
     private Date end_date;
     private String name;
     private String description;
+
+    public Season(){}
+
+    public Season(Integer season_id, Date start_date, Date end_date, String name,String description){
+        this.season_id = season_id;
+        this.start_date = start_date;
+        this.end_date = end_date;
+        this.name = name;
+        this.description = description;
+    }
+
 
     public int getSeason_id() {
         return season_id;

@@ -1,5 +1,7 @@
 package com.springbootorm.api.season;
 
+
+import com.springbootorm.api.match.Match;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -36,5 +38,9 @@ public class SeasonService {
 
     public void deleteSeason(Integer id) {
         seasonRepository.deleteById(id);
+    }
+
+    public List<Match> getMatchesInSeason(Integer seasonId){
+        return seasonRepository.findBySeason_id(seasonId);
     }
 }
