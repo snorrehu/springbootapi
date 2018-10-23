@@ -23,6 +23,7 @@ public class SeasonController {
     public List<Season> getAllSeasons(){
         return seasonService.getAllSeasons();
     }
+    
 
     //Request: Read one by id
     @RequestMapping("/seasons/{id}")
