@@ -1,10 +1,10 @@
-package com.springbootorm.api.user;
+package com.springbootorm.api.users;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class User {
+public class Users {
 
     @Id
     private Integer user_id;
@@ -13,9 +13,9 @@ public class User {
     private String password;
     private boolean admin_flag;
 
-    public User(){}
+    public Users(){}
 
-    public User(Integer user_id, String user_name, String password, boolean admin_flag) {
+    public Users(Integer user_id, String user_name, String password, boolean admin_flag) {
         this.user_id = user_id;
         this.user_name = user_name;
         this.password = password;

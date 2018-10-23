@@ -1,4 +1,4 @@
-package com.springbootorm.api.user;
+package com.springbootorm.api.users;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +15,7 @@ public class UserController {
 
     //Request: Create
     @RequestMapping(method = RequestMethod.POST, value = "/users")
-    public void createUser(@RequestBody User user){
+    public void createUser(@RequestBody Users users){
         int i = 0;
         System.out.println("checkIfExists: " + userService.checkIfExists(i));
         while(userService.checkIfExists(i)){
@@ -23,27 +23,27 @@ public class UserController {
             System.out.println(i);
             System.out.println(userService.checkIfExists(i));
         }
-        user.setUser_id(i);
-        userService.addUser(user);
+        users.setUser_id(i);
+        userService.addUser(users);
     }
 
     //Request: Read all
     @RequestMapping("/users")
-    public List<User> getAllUsers(){
+    public List<Users> getAllUsers(){
         return userService.getAllUsers();
     }
 
 
     //Request: Read one by id
     @RequestMapping("/users/{id}")
-    public ArrayList<User> readUser(@PathVariable Integer id){
+    public ArrayList<Users> readUser(@PathVariable Integer id){
         return userService.getUser(id);
     }
 
     //Request: Update
     @RequestMapping(method = RequestMethod.PUT, value = "/users/{id}")
-    public void updateUser(@RequestBody User user, @PathVariable Integer id){
-        userService.updateUser(user,id);
+    public void updateUser(@RequestBody Users users, @PathVariable Integer id){
+        userService.updateUser(users,id);
     }
 
     //Request: Delete by id
