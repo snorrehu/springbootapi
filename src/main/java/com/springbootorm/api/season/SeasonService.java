@@ -22,8 +22,11 @@ public class SeasonService {
         return seasons;
     }
 
-    public Season getSeason(Integer id) {
-        return seasonRepository.findById(id).get();
+    //Read one
+    public ArrayList<Season> getSeason(Integer id){
+        ArrayList<Season> seasonList = new ArrayList<>();
+        seasonList.add(seasonRepository.findById(id).get());
+        return seasonList;
     }
 
     //Update

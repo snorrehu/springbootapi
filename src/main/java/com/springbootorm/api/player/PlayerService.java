@@ -25,8 +25,10 @@ public class PlayerService {
     }
 
     //Read one
-    public Player getPlayer(Integer id){
-        return playerRepository.findById(id).get();
+    public ArrayList<Player> getPlayer(Integer id){
+        ArrayList<Player> playerList = new ArrayList<>();
+        playerList.add(playerRepository.findById(id).get());
+        return playerList;
     }
 
     //Update
