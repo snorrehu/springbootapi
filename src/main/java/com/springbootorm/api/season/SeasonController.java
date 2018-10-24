@@ -15,6 +15,14 @@ public class SeasonController {
     //Request: Create
     @RequestMapping(method = RequestMethod.POST, value = "/seasons")
     public void createSeason(@RequestBody Season season){
+        int i = 0;
+        System.out.println("checkIfExists: " + seasonService.checkIfExists(i));
+        while(seasonService.checkIfExists(i)){
+            i++;
+            System.out.println(i);
+            System.out.println(seasonService.checkIfExists(i));
+        }
+        season.setSeason_id(i);
         seasonService.addSeason(season);
     }
 

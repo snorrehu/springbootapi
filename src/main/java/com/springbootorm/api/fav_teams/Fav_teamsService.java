@@ -15,10 +15,10 @@ public class Fav_teamsService {
         fav_teamsRepository.save(fav_teams);
     }
 
-    public List<Fav_teams> getAllFav_teamss() {
-        List<Fav_teams> fav_teamss = new ArrayList<>();
-        fav_teamsRepository.findAll().forEach(fav_teamss::add);
-        return fav_teamss;
+    public List<Fav_teams> getAllFav_teams() {
+        List<Fav_teams> fav_teams = new ArrayList<>();
+        fav_teamsRepository.findAll().forEach(fav_teams::add);
+        return fav_teams;
     }
 
     //Read one

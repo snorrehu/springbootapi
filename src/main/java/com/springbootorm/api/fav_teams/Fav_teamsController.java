@@ -14,32 +14,32 @@ public class Fav_teamsController{
         private Fav_teamsService fav_teamsService;
 
         //Request: Create
-        @RequestMapping(method = RequestMethod.POST, value = "/fav_teamss")
+        @RequestMapping(method = RequestMethod.POST, value = "/fav_teams")
         public void createFav_teams(@RequestBody Fav_teams fav_teams){
             fav_teamsService.addFav_teams(fav_teams);
         }
 
         //Request: Read all
-        @RequestMapping("/fav_teamss")
-        public List<Fav_teams> getAllFav_teamss(){
-            return fav_teamsService.getAllFav_teamss();
+        @RequestMapping("/fav_teams")
+        public List<Fav_teams> getAllFav_teams(){
+            return fav_teamsService.getAllFav_teams();
         }
 
 
         //Request: Read one by id
-        @RequestMapping("/fav_teamss/{id}")
+        @RequestMapping("/fav_teams/{id}")
         public ArrayList<Fav_teams> readFav_teams(@PathVariable Integer id){
             return fav_teamsService.getFav_teams(id);
         }
 
         //Request: Update
-        @RequestMapping(method = RequestMethod.PUT, value = "/fav_teamss/{id}")
+        @RequestMapping(method = RequestMethod.PUT, value = "/fav_teams/{id}")
         public void updateFav_teams(@RequestBody Fav_teams fav_teams, @PathVariable Integer id){
             fav_teamsService.updateFav_teams(fav_teams,id);
         }
 
         //Request: Delete by id
-        @RequestMapping(method = RequestMethod.DELETE, value = "/fav_teamss/{id}")
+        @RequestMapping(method = RequestMethod.DELETE, value = "/fav_teams/{id}")
         public void deleteFav_teams(@PathVariable Integer id){
             fav_teamsService.deleteFav_teams(id);
         }
@@ -47,7 +47,7 @@ public class Fav_teamsController{
         //********************************CRUD LE'Special*******************************************************
 
     /*
-    @RequestMapping(method = RequestMethod.GET, value = "/fav_teamss/{id}/matches")
+    @RequestMapping(method = RequestMethod.GET, value = "/fav_teams/{id}/matches")
     public void getMatchesInFav_teams(@PathVariable Integer id){
         fav_teamsService.getMatchesInFav_teams(id);
     }
