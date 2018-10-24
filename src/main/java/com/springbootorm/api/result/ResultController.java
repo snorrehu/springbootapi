@@ -23,6 +23,7 @@ public class ResultController {
                              @PathVariable("team2_score") Integer team2_score, @PathVariable("match_id") Integer match_id){
         Result teamResult1 = new Result();
         Result teamResult2 = new Result();
+        System.out.println("hello");
 
         teamResult1.setMatch_id(match_id);
         teamResult1.setTeam_id(team_id_1);
