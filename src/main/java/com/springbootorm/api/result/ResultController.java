@@ -23,7 +23,6 @@ public class ResultController {
                              @PathVariable("team2_score") Integer team2_score, @PathVariable("match_id") Integer match_id){
         Result teamResult1 = new Result();
         Result teamResult2 = new Result();
-        System.out.println("hello");
 
         teamResult1.setMatch_id(match_id);
         teamResult1.setTeam_id(team_id_1);
@@ -46,8 +45,11 @@ public class ResultController {
             teamResult2.setResult("DRAW");
         }
 
-        resultService.addResult(teamResult1);
-        resultService.addResult(teamResult2);
+        List<Result> resultList = new ArrayList<>();
+        resultList.add(teamResult1);
+        resultList.add(teamResult2);
+        resultService.addResult(resultList);
+
     }
 
     //Request: Read all
