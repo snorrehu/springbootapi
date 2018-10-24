@@ -1,13 +1,12 @@
 package com.springbootorm.api;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
-@RestController
+@Controller
 public class FrontPageDocumentation {
-
     @RequestMapping("/")
-    public String homePage() {
-      return "test";
+    public String one() {
+        return "redirect:/static/test.html";
     }
 }
