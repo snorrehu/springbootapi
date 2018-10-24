@@ -16,7 +16,7 @@ public class CoachController {
     private CoachService coachService;
 
     //Request: Create
-    @RequestMapping(method = RequestMethod.POST, value = "/coachs")
+    @RequestMapping(method = RequestMethod.POST, value = "/coaches")
     public void createCoach(@RequestBody Coach coach){
         int i = 0;
         System.out.println("checkIfExists: " + coachService.checkIfExists(i));
@@ -30,7 +30,7 @@ public class CoachController {
     }
 
     //Request: Read all
-    @RequestMapping("/coachs")
+    @RequestMapping("/coaches")
     public List<Coach> getAllCoachs(){
         return coachService.getAllCoachs();
     }
@@ -42,13 +42,13 @@ public class CoachController {
     }
 
     //Request: Update
-    @RequestMapping(method = RequestMethod.PUT, value = "/coachs/{id}")
+    @RequestMapping(method = RequestMethod.PUT, value = "/coaches/{id}")
     public void updateCoach(@RequestBody Coach coach, @PathVariable Integer id){
         coachService.updateCoach(coach,id);
     }
 
     //Request: Delete by id
-    @RequestMapping(method = RequestMethod.DELETE, value = "/coachs/{id}")
+    @RequestMapping(method = RequestMethod.DELETE, value = "/coaches/{id}")
     public void deleteCoach(@PathVariable Integer id){
         //Coach p = new Coach(id,);
         //coachService.updateCoach(p, id);
