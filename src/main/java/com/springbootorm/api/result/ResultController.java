@@ -18,17 +18,35 @@ public class ResultController {
     private ResultService resultService;
 
     //Request: Create
-    @RequestMapping(method = RequestMethod.POST, value = "/results")
-    public void createResult(@RequestBody Result result){
-        int i = 0;
-        System.out.println("checkIfExists: " + resultService.checkIfExists(i));
-        while(resultService.checkIfExists(i)){
-            i++;
-            System.out.println(i);
-            System.out.println(resultService.checkIfExists(i));
+    @RequestMapping(method = RequestMethod.POST, value = "/results/{match_id}/{team_id_1}/{team_id_2}/team1_score/team2_score")
+    public void createResult(@PathVariable Integer team_id_1, @PathVariable Integer team_id_2, @PathVariable Integer team1_score,
+                             @PathVariable Integer team2_score, @PathVariable Integer match_id){
+        Result teamResult1 = new Result();
+        Result teamResult2 = new Result();
+
+        teamResult1.setMatch_id(match_id);
+        teamResult1.setTeam_id(team_id_1);
+        teamResult1.setScore(team1_score);
+
+        teamResult2.setMatch_id(match_id);
+        teamResult2.setTeam_id(team_id_2);
+        teamResult2.setScore(team2_score);
+
+        if(team1_score>team2_score){
+            teamResult1.setResult("WIN");
+            teamResult2.setResult("LOOSE");
         }
-        result.setMatch_id(i);
-        resultService.addResult(result);
+        else if(team2_score>team1_score){
+            teamResult1.setResult("LOOSE");
+            teamResult2.setResult("WIN");
+        }
+        else{
+            teamResult1.setResult("DRAW");
+            teamResult2.setResult("DRAW");
+        }
+
+        resultService.addResult(teamResult1);
+        resultService.addResult(teamResult2);
     }
 
     //Request: Read all

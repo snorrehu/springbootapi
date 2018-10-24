@@ -36,7 +36,7 @@ public class CoachController {
     }
 
     //Request: Read one by id
-    @RequestMapping("/coachs/{id}")
+    @RequestMapping("/coaches/{id}")
     public ArrayList<Coach> readCoach(@PathVariable Integer id){
         return coachService.getCoach(id);
     }
