@@ -19,8 +19,8 @@ public class ResultController {
 
     //Request: Create
     @RequestMapping(method = RequestMethod.POST, value = "/results/{match_id}/{team_id_1}/{team_id_2}/{team1_score}/{team2_score}")
-    public void createResult(@PathVariable Integer team_id_1, @PathVariable Integer team_id_2, @PathVariable Integer team1_score,
-                             @PathVariable Integer team2_score, @PathVariable Integer match_id){
+    public void createResult(@PathVariable("team_id_1") Integer team_id_1, @PathVariable("team_id_2") Integer team_id_2, @PathVariable("team1_score") Integer team1_score,
+                             @PathVariable("team2_score") Integer team2_score, @PathVariable("match_id") Integer match_id){
         Result teamResult1 = new Result();
         Result teamResult2 = new Result();
 
