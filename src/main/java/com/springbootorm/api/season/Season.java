@@ -2,21 +2,22 @@ package com.springbootorm.api.season;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.util.Date;
+
+import java.time.LocalDate;
 
 @Entity
 public class Season {
 
     @Id
     private Integer season_id;
-    private Date start_date;
-    private Date end_date;
+    private LocalDate start_date;
+    private LocalDate end_date;
     private String name;
     private String description;
 
     public Season(){}
 
-    public Season(Integer season_id, Date start_date, Date end_date, String name,String description){
+    public Season(Integer season_id, LocalDate start_date, LocalDate end_date, String name,String description){
         this.season_id = season_id;
         this.start_date = start_date;
         this.end_date = end_date;
@@ -33,19 +34,19 @@ public class Season {
         this.season_id = season_id;
     }
 
-    public Date getStart_date() {
+    public LocalDate getStart_date() {
         return start_date;
     }
 
-    public void setStart_date(Date start_date) {
+    public void setStart_date(LocalDate start_date) {
         this.start_date = start_date;
     }
 
-    public Date getEnd_date() {
+    public LocalDate getEnd_date() {
         return end_date;
     }
 
-    public void setEnd_date(Date end_date) {
+    public void setEnd_date(LocalDate end_date) {
         this.end_date = end_date;
     }
 
