@@ -1,4 +1,4 @@
-package com.springbootorm.api.user;
+package com.springbootorm.api.users;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,26 +12,26 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public void addUser(User user) {
-        userRepository.save(user);
+    public void addUser(Users users) {
+        userRepository.save(users);
     }
 
-    public List<User> getAllUsers() {
-        List<User> users = new ArrayList<>();
+    public List<Users> getAllUsers() {
+        List<Users> users = new ArrayList<>();
         userRepository.findAll().forEach(users::add);
         return users;
     }
 
     //Read one
-    public ArrayList<User> getUser(Integer id){
-        ArrayList<User> userList = new ArrayList<>();
-        userList.add(userRepository.findById(id).get());
-        return userList;
+    public ArrayList<Users> getUser(Integer id){
+        ArrayList<Users> usersList = new ArrayList<>();
+        usersList.add(userRepository.findById(id).get());
+        return usersList;
     }
 
     //Update
-    public void updateUser(User user, Integer id) {
-        userRepository.save(user);
+    public void updateUser(Users users, Integer id) {
+        userRepository.save(users);
     }
 
     public void deleteUser(Integer id) {
