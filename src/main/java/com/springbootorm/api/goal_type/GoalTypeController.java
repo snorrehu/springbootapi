@@ -17,7 +17,7 @@ public class GoalTypeController {
     private GoalTypeService goalTypeService;
 
     //Request: Create
-    @RequestMapping(method = RequestMethod.POST, value = "/goalTypes")
+    @RequestMapping(method = RequestMethod.POST, value = "/goal_types")
     public void createGoalType(@RequestBody GoalType goalType){
         int i = 0;
         System.out.println("checkIfExists: " + goalTypeService.checkIfExists(i));
@@ -31,25 +31,25 @@ public class GoalTypeController {
     }
 
     //Request: Read all
-    @RequestMapping("/goalTypes")
+    @RequestMapping("/goal_types")
     public List<GoalType> getAllGoalTypes(){
         return goalTypeService.getAllGoalTypes();
     }
 
     //Request: Read one by id
-    @RequestMapping("/goalTypes/{id}")
+    @RequestMapping("/goal_types/{id}")
     public ArrayList<GoalType> readGoalType(@PathVariable Integer id){
         return goalTypeService.getGoalType(id);
     }
 
     //Request: Update
-    @RequestMapping(method = RequestMethod.PUT, value = "/goalTypes/{id}")
+    @RequestMapping(method = RequestMethod.PUT, value = "/goal_types/{id}")
     public void updateGoalType(@RequestBody GoalType goalType, @PathVariable Integer id){
         goalTypeService.updateGoalType(goalType,id);
     }
 
     //Request: Delete by id
-    @RequestMapping(method = RequestMethod.DELETE, value = "/goalTypes/{id}")
+    @RequestMapping(method = RequestMethod.DELETE, value = "/goal_types/{id}")
     public void deleteGoalType(@PathVariable Integer id){
 
         String sDate1="1111-11-11";

@@ -17,7 +17,7 @@ public class MatchGoalController {
     private MatchGoalService matchGoalService;
 
     //Request: Create
-    @RequestMapping(method = RequestMethod.POST, value = "/matchGoals")
+    @RequestMapping(method = RequestMethod.POST, value = "/match_goals")
     public void createMatchGoal(@RequestBody MatchGoal matchGoal){
         int i = 0;
         System.out.println("checkIfExists: " + matchGoalService.checkIfExists(i));
@@ -31,25 +31,25 @@ public class MatchGoalController {
     }
 
     //Request: Read all
-    @RequestMapping("/matchGoals")
+    @RequestMapping("/match_goals")
     public List<MatchGoal> getAllMatchGoals(){
         return matchGoalService.getAllMatchGoals();
     }
 
     //Request: Read one by id
-    @RequestMapping("/matchGoals/{id}")
+    @RequestMapping("/match_goals/{id}")
     public ArrayList<MatchGoal> readMatchGoal(@PathVariable Integer id){
         return matchGoalService.getMatchGoal(id);
     }
 
     //Request: Update
-    @RequestMapping(method = RequestMethod.PUT, value = "/matchGoals/{id}")
+    @RequestMapping(method = RequestMethod.PUT, value = "/match_goals/{id}")
     public void updateMatchGoal(@RequestBody MatchGoal matchGoal, @PathVariable Integer id){
         matchGoalService.updateMatchGoals(matchGoal,id);
     }
 
     //Request: Delete by id
-    @RequestMapping(method = RequestMethod.DELETE, value = "/matchGoals/{id}")
+    @RequestMapping(method = RequestMethod.DELETE, value = "/match_goals/{id}")
     public void deleteMatchGoal(@PathVariable Integer id){
 
         String sDate1="1111-11-11";

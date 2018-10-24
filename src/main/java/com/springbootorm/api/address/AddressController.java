@@ -17,7 +17,7 @@ public class AddressController {
     private AddressService addressService;
 
     //Request: Create
-    @RequestMapping(method = RequestMethod.POST, value = "/addresss")
+    @RequestMapping(method = RequestMethod.POST, value = "/addresses")
     public void createAddress(@RequestBody Address address){
         int i = 0;
         System.out.println("checkIfExists: " + addressService.checkIfExists(i));
@@ -31,25 +31,25 @@ public class AddressController {
     }
 
     //Request: Read all
-    @RequestMapping("/addresss")
+    @RequestMapping("/addresses")
     public List<Address> getAllAddresss(){
         return addressService.getAllAddresss();
     }
 
     //Request: Read one by id
-    @RequestMapping("/addresss/{id}")
+    @RequestMapping("/addresses/{id}")
     public ArrayList<Address> readAddress(@PathVariable Integer id){
         return addressService.getAddress(id);
     }
 
     //Request: Update
-    @RequestMapping(method = RequestMethod.PUT, value = "/addresss/{id}")
+    @RequestMapping(method = RequestMethod.PUT, value = "/addresses/{id}")
     public void updateAddress(@RequestBody Address address, @PathVariable Integer id){
         addressService.updateAddress(address,id);
     }
 
     //Request: Delete by id
-    @RequestMapping(method = RequestMethod.DELETE, value = "/addresss/{id}")
+    @RequestMapping(method = RequestMethod.DELETE, value = "/addresses/{id}")
     public void deleteAddress(@PathVariable Integer id){
 
         String sDate1="1111-11-11";
