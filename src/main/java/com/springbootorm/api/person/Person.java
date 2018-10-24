@@ -3,6 +3,8 @@ package com.springbootorm.api.person;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -15,11 +17,11 @@ public class Person {
     private Integer address_id;
     private String first_name;
     private String last_name;
-    private Date date_of_birth;
+    private LocalDate date_of_birth;
 
     public Person(){}
 
-    public Person(Integer person_id,Integer address_id, String first_name, String last_name, Date date_of_birth) {
+    public Person(Integer person_id,Integer address_id, String first_name, String last_name, LocalDate date_of_birth) {
         this.person_id = person_id;
         this.address_id = address_id;
         this.first_name = first_name;
@@ -59,11 +61,11 @@ public class Person {
         this.last_name = last_name;
     }
 
-    public Date getDate_of_birth() {
+    public LocalDate getDate_of_birth() {
         return date_of_birth;
     }
 
-    public void setDate_of_birth(Date date_of_birth) {
+    public void setDate_of_birth(LocalDate date_of_birth) {
         this.date_of_birth = date_of_birth;
     }
 }
