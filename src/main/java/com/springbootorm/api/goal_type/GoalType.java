@@ -9,12 +9,14 @@ public class GoalType {
     @Id
     private Integer goal_type_id;
     private String type;
+    private Boolean active_flag;
 
     public GoalType(){}
 
-    public GoalType(Integer goal_type_id, String type) {
+    public GoalType(Integer goal_type_id, String type, boolean active_flag) {
         this.goal_type_id = goal_type_id;
         this.type = type;
+        this.active_flag = active_flag;
     }
 
     public Integer getGoalType_id() {
@@ -23,6 +25,14 @@ public class GoalType {
 
     public void setGoalType_id(Integer goal_type_id) {
         this.goal_type_id = goal_type_id;
+    }
+
+    public boolean getActivity() {
+        return active_flag;
+    }
+
+    public void setActivity(Boolean active_flag) {
+        this.active_flag = active_flag;
     }
 
     public String getPerson_id() {

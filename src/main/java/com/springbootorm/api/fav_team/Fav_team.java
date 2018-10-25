@@ -9,13 +9,15 @@ public class Fav_team {
     @Id
     private Integer relation_id;
 
+    private Boolean active_flag;
     private Integer user_id;
     private Integer team_id;
 
     public Fav_team(){}
 
-    public Fav_team(Integer user_id, Integer team_id,Integer relation_id) {
+    public Fav_team(Integer user_id, Integer team_id,Integer relation_id, boolean active_flag) {
         this.user_id = user_id;
+        this.active_flag = active_flag;
         this.team_id = team_id;
         this.relation_id = relation_id;
     }
@@ -26,6 +28,14 @@ public class Fav_team {
 
     public void setRelation_id(Integer relation_id) {
         this.relation_id = relation_id;
+    }
+
+    public boolean getActivity() {
+        return active_flag;
+    }
+
+    public void setActivity(Boolean active_flag) {
+        this.active_flag = active_flag;
     }
 
     public Integer getUser_id() {

@@ -8,16 +8,17 @@ public class Player {
     @Id
     private Integer player_id;
 
+    private Boolean active_flag;
     private Integer person_id;
-
     private Integer team_id;
     private String normal_position;
     private String number;
 
     public Player(){};
 
-    public Player(Integer player_id,Integer person_id, Integer team_id, String normal_position, String number) {
+    public Player(Integer player_id,Integer person_id, Integer team_id, String normal_position, String number, boolean active_flag) {
         this.player_id = player_id;
+        this.active_flag = active_flag;
         this.person_id = person_id;
         this.team_id = team_id;
         this.normal_position = normal_position;
@@ -30,6 +31,14 @@ public class Player {
 
     public void setPlayer_id(Integer player_id) {
         this.player_id = player_id;
+    }
+
+    public boolean getActivity() {
+        return active_flag;
+    }
+
+    public void setActivity(Boolean active_flag) {
+        this.active_flag = active_flag;
     }
 
     public Integer getPerson_id() {

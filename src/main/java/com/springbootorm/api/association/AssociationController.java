@@ -50,7 +50,7 @@ public class AssociationController {
     @RequestMapping(method = RequestMethod.DELETE, value = "/associations/{id}")
     public void deleteAssociation(@PathVariable Integer id){
 
-        Association p = new Association(id,"undefined","undefined");
+        Association p = new Association(id,"undefined","undefined", true);
         associationService.updateAssociation(p, id);
     }
     

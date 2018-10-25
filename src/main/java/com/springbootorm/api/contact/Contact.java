@@ -8,7 +8,8 @@ public class Contact {
 
     @Id
     private Integer contact_id;
-
+    
+    private Boolean active_flag;
     private Integer person_id;
     private String contact_type;
     private String contact_detail;
@@ -16,11 +17,12 @@ public class Contact {
     public Contact(){}
 
 
-    public Contact(Integer contact_id, Integer person_id, String contact_type, String contact_detail) {
+    public Contact(Integer contact_id, Integer person_id, String contact_type, String contact_detail, boolean active_flag) {
         this.contact_id = contact_id;
         this.person_id = person_id;
         this.contact_type = contact_type;
         this.contact_detail = contact_detail;
+        this.active_flag = active_flag;
     }
 
     public Integer getContact_id() {
@@ -29,6 +31,14 @@ public class Contact {
 
     public void setContact_id(Integer contact_id) {
         this.contact_id = contact_id;
+    }
+
+    public boolean getActivity() {
+        return active_flag;
+    }
+
+    public void setActivity(Boolean active_flag) {
+        this.active_flag = active_flag;
     }
 
     public Integer getPerson_id() {
