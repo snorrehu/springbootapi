@@ -2,7 +2,6 @@ package com.springbootorm.api.team;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.util.Date;
 
 @Entity
 public class Team {
