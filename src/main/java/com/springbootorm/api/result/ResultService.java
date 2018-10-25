@@ -13,9 +13,8 @@ public class ResultService {
     private ResultRepository resultRepository;
 
     //Create
-    public void addResult(List<Result> result){
-        System.out.println(result);
-        resultRepository.saveAll(result);
+    public void addResult(Result result){
+        resultRepository.save(result);
     }
 
     //Read all

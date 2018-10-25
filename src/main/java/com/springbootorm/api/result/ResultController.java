@@ -44,11 +44,8 @@ public class ResultController {
             teamResult2.setResult("DRAW");
         }
 
-        List<Result> resultList = new ArrayList<>();
-        resultList.add(teamResult1);
-        resultList.add(teamResult2);
-        System.out.println(resultList.toString());
-        resultService.addResult(resultList);
+        resultService.addResult(teamResult1);
+        resultService.addResult(teamResult2);
 
     }
 
