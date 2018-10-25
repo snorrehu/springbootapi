@@ -45,6 +45,7 @@ public class AddressService {
     //Delete
     public void deleteAddress(Integer id) {
         Address addressToDelete = addressRepository.findById(id).get();
+        addressToDelete.setActivity(false);
         updateAddress(addressToDelete,id);
     }
 
