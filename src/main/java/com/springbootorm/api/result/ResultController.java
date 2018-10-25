@@ -16,6 +16,9 @@ public class ResultController {
     @Autowired
     private ResultService resultService;
 
+    @Autowired
+    private ResultService resultService2;
+
     //Request: Create
     @RequestMapping(method = RequestMethod.POST, value = "/results/match_id={match_id}/team1_id={team_id_1}/team2_id={team_id_2}/team1_score={team1_score}/team2_score={team2_score}")
     public void createResult(@PathVariable("team_id_1") Integer team_id_1, @PathVariable("team_id_2") Integer team_id_2, @PathVariable("team1_score") Integer team1_score,
@@ -45,7 +48,7 @@ public class ResultController {
         }
 
         resultService.addResult(teamResult1);
-        resultService.addResult(teamResult2);
+        resultService2.addResult(teamResult2);
 
     }
 
