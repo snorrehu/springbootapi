@@ -10,6 +10,8 @@ public class Match {
     @Id
     // @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer match_id;
+
+    private Boolean active_flag;
     private LocalDate match_date;
     private Integer home_team_id;
     private Integer away_team_id;
@@ -19,8 +21,9 @@ public class Match {
     public Match() {
 
     }
-    public Match(Integer match_id, LocalDate match_date, Integer home_team_id, Integer away_team_id, Integer season_id, Integer location_id) {
+    public Match(Integer match_id, LocalDate match_date, Integer home_team_id, Integer away_team_id, Integer season_id, Integer location_id, boolean active_flag) {
         this.match_id = match_id;
+        this.active_flag = active_flag;
         this.match_date = match_date;
         this.home_team_id = home_team_id;
         this.away_team_id = away_team_id;
@@ -34,6 +37,14 @@ public class Match {
 
     public void setMatch_id(Integer match_id) {
         this.match_id = match_id;
+    }
+
+    public boolean getActivity() {
+        return active_flag;
+    }
+
+    public void setActivity(Boolean active_flag) {
+        this.active_flag = active_flag;
     }
 
     public LocalDate getMatch_date() {

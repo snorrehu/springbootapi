@@ -8,6 +8,8 @@ public class Team {
 
     @Id
     private Integer team_id;
+
+    private Boolean active_flag;
     private Integer association_id;
     private Integer coach_id;
     private Integer owner_id;
@@ -17,13 +19,14 @@ public class Team {
 
     public Team(){}
 
-    public Team(Integer team_id, Integer association_id, Integer coach_id, Integer owner_id,Integer location_id, String name){
+    public Team(Integer team_id, Integer association_id, Integer coach_id, Integer owner_id,Integer location_id, String name, boolean active_flag){
         this.team_id = team_id;
         this.association_id = association_id;
         this.coach_id = coach_id;
         this.owner_id = owner_id;
         this.location_id = location_id;
         this.name = name;
+        this.active_flag = active_flag;
     }
 
 
@@ -35,6 +38,14 @@ public class Team {
 
     public void setTeam_id(int team_id) {
         this.team_id = team_id;
+    }
+
+    public boolean getActivity() {
+        return active_flag;
+    }
+
+    public void setActivity(Boolean active_flag) {
+        this.active_flag = active_flag;
     }
 
     public Integer getAssociation_id() {

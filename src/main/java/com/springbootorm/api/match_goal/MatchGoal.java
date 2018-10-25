@@ -8,6 +8,8 @@ public class MatchGoal {
     @Id
     // @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer goal_id;
+
+    private Boolean active_flag;
     private Integer player_id;
     private Integer goal_type_id;
     private Integer match_id;
@@ -16,8 +18,9 @@ public class MatchGoal {
     public MatchGoal() {
 
     }
-    public MatchGoal(Integer goal_id, Integer player_id, Integer goal_type_id, Integer match_id, String description) {
+    public MatchGoal(Integer goal_id, Integer player_id, Integer goal_type_id, Integer match_id, String description, boolean active_flag) {
         this.goal_id = goal_id;
+        this.active_flag = active_flag;
         this.player_id = player_id;
         this.goal_type_id = goal_type_id;
         this.match_id = match_id;
@@ -30,6 +33,14 @@ public class MatchGoal {
 
     public void setMatchGoal_id(Integer goal_id) {
         this.goal_id = goal_id;
+    }
+
+    public boolean getActivity() {
+        return active_flag;
+    }
+
+    public void setActivity(Boolean active_flag) {
+        this.active_flag = active_flag;
     }
 
     public Integer getPlayer_id() {
