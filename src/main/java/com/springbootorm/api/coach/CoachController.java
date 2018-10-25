@@ -50,7 +50,6 @@ public class CoachController {
     //Request: Delete by id
     @RequestMapping(method = RequestMethod.DELETE, value = "/coaches/{id}")
     public void deleteCoach(@PathVariable Integer id){
-        //Coach p = new Coach(id,);
-        //coachService.updateCoach(p, id);
+        coachService.deleteCoach(id);
     }
 }

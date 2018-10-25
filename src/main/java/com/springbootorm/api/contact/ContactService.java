@@ -38,7 +38,9 @@ public class ContactService {
 
     //Delete
     public void deleteContact(Integer id) {
-        contactRepository.deleteById(id);
+        Contact contactToDelete = contactRepository.findById(id).get();
+        contactToDelete.setActivity(false);
+        updateContact(contactToDelete,id);
     }
 
     //Check if exists

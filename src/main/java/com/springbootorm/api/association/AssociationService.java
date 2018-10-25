@@ -38,7 +38,9 @@ public class AssociationService {
 
     //Delete
     public void deleteAssociation(Integer id) {
-        associationRepository.deleteById(id);
+        Association associationToDelete = associationRepository.findById(id).get();
+        associationToDelete.setActivity(false);
+        updateAssociation(associationToDelete,id);
     }
 
     //Check if exists

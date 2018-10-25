@@ -38,7 +38,9 @@ public class Match_positionService {
 
     //Delete
     public void deleteMatch_position(Integer id) {
-        match_positionRepository.deleteById(id);
+        Match_position match_positionToDelete = match_positionRepository.findById(id).get();
+        match_positionToDelete.setActivity(false);
+        updateMatch_position(match_positionToDelete,id);
     }
 
     //Check if exists

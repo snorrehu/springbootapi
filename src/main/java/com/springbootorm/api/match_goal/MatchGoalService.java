@@ -32,13 +32,15 @@ public class MatchGoalService {
     }
 
     //Update
-    public void updateMatchGoals(MatchGoal matchGoals, Integer id) {
+    public void updateMatchGoal(MatchGoal matchGoals, Integer id) {
         matchGoalsRepository.save(matchGoals);
     }
 
     //Delete
-    public void deleteMatchGoals(Integer id) {
-        matchGoalsRepository.deleteById(id);
+    public void deleteMatchGoal(Integer id) {
+        MatchGoal matchGoalToDelete = matchGoalsRepository.findById(id).get();
+        matchGoalToDelete.setActivity(false);
+        updateMatchGoal(matchGoalToDelete,id);
     }
 
     //Check if exists

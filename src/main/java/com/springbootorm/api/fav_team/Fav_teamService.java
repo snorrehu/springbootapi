@@ -34,7 +34,9 @@ public class Fav_teamService {
     }
 
     public void deleteFav_team(Integer id) {
-        fav_teamRepository.deleteById(id);
+        Fav_team fav_teamToDelete = fav_teamRepository.findById(id).get();
+        fav_teamToDelete.setActivity(false);
+        updateFav_team(fav_teamToDelete,id);
     }
 
     //Check if exists

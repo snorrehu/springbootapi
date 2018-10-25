@@ -38,7 +38,9 @@ public class GoalTypeService {
 
     //Delete
     public void deleteGoalType(Integer id) {
-        goalTypeRepository.deleteById(id);
+        GoalType goalTypeToDelete = goalTypeRepository.findById(id).get();
+        goalTypeToDelete.setActivity(false);
+        updateGoalType(goalTypeToDelete,id);
     }
 
     //Check if exists

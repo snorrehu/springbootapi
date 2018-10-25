@@ -51,7 +51,6 @@ public class OwnerController {
     //Request: Delete by id
     @RequestMapping(method = RequestMethod.DELETE, value = "/owners/{id}")
     public void deleteOwner(@PathVariable Integer id){
-        //Owner p = new Owner(id, null ,"Undefined", "Undefined", d);
-        //ownerService.updateOwner(p, id);
+        ownerService.deleteOwner(id);
     }
 }

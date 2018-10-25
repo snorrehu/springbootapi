@@ -38,7 +38,9 @@ public class MatchService {
 
     //Delete
     public void deleteMatch(Integer id) {
-        matchRepository.deleteById(id);
+        Match matchToDelete = matchRepository.findById(id).get();
+        matchToDelete.setActivity(false);
+        updateMatch(matchToDelete,id);
     }
 
     //Check if exists

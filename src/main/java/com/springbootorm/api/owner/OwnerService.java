@@ -38,7 +38,9 @@ public class OwnerService {
 
     //Delete
     public void deleteOwner(Integer id) {
-        ownerRepository.deleteById(id);
+        Owner ownerToDelete = ownerRepository.findById(id).get();
+        ownerToDelete.setActivity(false);
+        updateOwner(ownerToDelete,id);
     }
 
     //Check if exists

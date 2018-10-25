@@ -51,17 +51,6 @@ public class ContactController {
     //Request: Delete by id
     @RequestMapping(method = RequestMethod.DELETE, value = "/contacts/{id}")
     public void deleteContact(@PathVariable Integer id){
-
-        String sDate1="1111-11-11";
-        Date d= null;
-
-        try {
-            d = new SimpleDateFormat("yyyy-MM-dd").parse(sDate1);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-        //Contact p = new Contact(id, null ,"Undefined", "Undefined", d);
-        //contactService.updateContact(p, id);
+        contactService.deleteContact(id);
     }
 }

@@ -45,22 +45,13 @@ public class MatchGoalController {
     //Request: Update
     @RequestMapping(method = RequestMethod.PUT, value = "/match_goals/{id}")
     public void updateMatchGoal(@RequestBody MatchGoal matchGoal, @PathVariable Integer id){
-        matchGoalService.updateMatchGoals(matchGoal,id);
+        matchGoalService.updateMatchGoal(matchGoal,id);
     }
 
     //Request: Delete by id
     @RequestMapping(method = RequestMethod.DELETE, value = "/match_goals/{id}")
     public void deleteMatchGoal(@PathVariable Integer id){
-
-        String sDate1="1111-11-11";
-        Date d = null;
-
-        try {
-            d = new SimpleDateFormat("yyyy-MM-dd").parse(sDate1);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
+        matchGoalService.deleteMatchGoal(id);
     }
 
 }

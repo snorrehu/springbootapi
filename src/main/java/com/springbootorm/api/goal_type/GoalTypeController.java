@@ -51,17 +51,6 @@ public class GoalTypeController {
     //Request: Delete by id
     @RequestMapping(method = RequestMethod.DELETE, value = "/goal_types/{id}")
     public void deleteGoalType(@PathVariable Integer id){
-
-        String sDate1="1111-11-11";
-        Date d= null;
-
-        try {
-            d = new SimpleDateFormat("yyyy-MM-dd").parse(sDate1);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-        //GoalType p = new GoalType(id, null ,"Undefined", "Undefined", d);
-        //goalTypeService.updateGoalType(p, id);
+        goalTypeService.deleteGoalType(id);
     }
 }

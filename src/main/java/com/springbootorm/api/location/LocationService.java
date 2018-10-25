@@ -35,6 +35,8 @@ public class LocationService {
     }
 
     public void deleteLocation(Integer id) {
-        locationRepository.deleteById(id);
+        Location locationToDelete = locationRepository.findById(id).get();
+        locationToDelete.setActivity(false);
+        updateLocation(locationToDelete,id);
     }
 }

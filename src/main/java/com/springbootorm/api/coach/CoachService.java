@@ -37,7 +37,9 @@ public class CoachService {
 
     //Delete
     public void deleteCoach(Integer id) {
-        coachRepository.deleteById(id);
+        Coach coachToDelete = coachRepository.findById(id).get();
+        coachToDelete.setActivity(false);
+        updateCoach(coachToDelete,id);
     }
 
     //Check if exists
