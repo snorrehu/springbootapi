@@ -1,11 +1,8 @@
 package com.springbootorm.api.person;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @Entity
 public class Person {
