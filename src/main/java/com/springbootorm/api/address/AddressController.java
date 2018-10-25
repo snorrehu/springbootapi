@@ -51,18 +51,7 @@ public class AddressController {
     //Request: Delete by id
     @RequestMapping(method = RequestMethod.DELETE, value = "/addresses/{id}")
     public void deleteAddress(@PathVariable Integer id){
-
-        String sDate1="1111-11-11";
-        Date d= null;
-
-        try {
-            d = new SimpleDateFormat("yyyy-MM-dd").parse(sDate1);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-        //Address p = new Address(id, null ,"Undefined", "Undefined", d);
-        //addressService.updateAddress(p, id);
+        addressService.deleteAddress(id);
     }
     
 }
