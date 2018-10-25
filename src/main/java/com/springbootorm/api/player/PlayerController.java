@@ -16,18 +16,16 @@ public class PlayerController {
     //Request: Create
     @RequestMapping(method = RequestMethod.POST, value = "/players")
     public void createPlayer(@RequestBody Player player){
-        boolean IdGenerator = true;
         int i = 0;
-        while(IdGenerator){
-        if(playerService.getPlayer(i) != null){
+        System.out.println("checkIfExists: " + playerService.checkIfExists(i));
+        while(playerService.checkIfExists(i)){
             i++;
+            System.out.println(i);
+            System.out.println(playerService.checkIfExists(i));
         }
-        else {
-            player.setPerson_id(i);
-            IdGenerator = false;
-        }
-        }
-      }
+        player.setPlayer_id(i);
+        playerService.addPlayer(player);
+    }
 
     //Request: Read all
     @RequestMapping("/players")

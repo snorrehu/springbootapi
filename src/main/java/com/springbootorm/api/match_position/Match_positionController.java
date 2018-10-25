@@ -19,13 +19,6 @@ public class Match_positionController {
     //Request: Create
     @RequestMapping(method = RequestMethod.POST, value = "/match_positions")
     public void createMatch_position(@RequestBody Match_position match_position){
-        int i = 0;
-        System.out.println("checkIfExists: " + match_positionService.checkIfExists(i));
-        while(match_positionService.checkIfExists(i)){
-            i++;
-            System.out.println(i);
-            System.out.println(match_positionService.checkIfExists(i));
-        }
         match_positionService.addMatch_position(match_position);
     }
 

@@ -38,6 +38,10 @@ public class SeasonService {
         seasonRepository.deleteById(id);
     }
 
+    //Check if exists
+    public boolean checkIfExists(Integer id){
+        return seasonRepository.existsById(id);
+    }
     /*
     public List<Match> getMatchesInSeason(Integer seasonId){
         return seasonRepository.findBySeason_id(seasonId);

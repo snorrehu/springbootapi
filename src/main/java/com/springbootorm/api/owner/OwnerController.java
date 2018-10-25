@@ -51,16 +51,6 @@ public class OwnerController {
     //Request: Delete by id
     @RequestMapping(method = RequestMethod.DELETE, value = "/owners/{id}")
     public void deleteOwner(@PathVariable Integer id){
-
-        String sDate1="1111-11-11";
-        Date d= null;
-
-        try {
-            d = new SimpleDateFormat("yyyy-MM-dd").parse(sDate1);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
         //Owner p = new Owner(id, null ,"Undefined", "Undefined", d);
         //ownerService.updateOwner(p, id);
     }

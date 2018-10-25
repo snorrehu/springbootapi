@@ -25,6 +25,12 @@ public class AddressService {
     }
 
     //Read one
+
+    /**
+     *
+     * @param id
+     * @return
+     */
     public ArrayList<Address> getAddress(Integer id){
         ArrayList<Address> addressList = new ArrayList<>();
         addressList.add(addressRepository.findById(id).get());
