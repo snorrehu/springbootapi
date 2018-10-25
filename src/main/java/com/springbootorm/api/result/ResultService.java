@@ -14,6 +14,7 @@ public class ResultService {
 
     //Create
     public void addResult(List<Result> result){
+        System.out.println(result);
         resultRepository.saveAll(result);
     }
 
