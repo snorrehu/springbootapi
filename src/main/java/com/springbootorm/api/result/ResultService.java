@@ -38,8 +38,9 @@ public class ResultService {
 
     //Delete
     public void deleteResult(Integer id) {
-        resultRepository.deleteById(id);
-    }
+        Result resultToDelete = resultRepository.findById(id).get();
+        resultToDelete.setActivity(false);
+        updateResult(resultToDelete,id);    }
 
     //Check if exists
     public boolean checkIfExists(Integer id){
