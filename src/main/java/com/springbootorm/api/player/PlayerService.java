@@ -38,7 +38,9 @@ public class PlayerService {
 
     //Delete
     public void deletePlayer(Integer id) {
-        playerRepository.deleteById(id);
+        Player playerToDelete = playerRepository.findById(id).get();
+        playerToDelete.setActivity(false);
+        updatePlayer(playerToDelete,id);
     }
 
     //Check if exists

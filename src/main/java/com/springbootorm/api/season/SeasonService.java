@@ -35,8 +35,9 @@ public class SeasonService {
     }
 
     public void deleteSeason(Integer id) {
-        seasonRepository.deleteById(id);
-    }
+        Season seasonToDelete = seasonRepository.findById(id).get();
+        seasonToDelete.setActivity(false);
+        updateSeason(seasonToDelete,id);    }
 
     //Check if exists
     public boolean checkIfExists(Integer id){

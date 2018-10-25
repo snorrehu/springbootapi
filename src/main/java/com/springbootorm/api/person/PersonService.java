@@ -39,8 +39,9 @@ public class PersonService {
 
     //Delete
     public void deletePerson(Integer id) {
-        personRepository.deleteById(id);
-    }
+        Person personToDelete = personRepository.findById(id).get();
+        personToDelete.setActivity(false);
+        updatePerson(personToDelete,id);    }
 
     //Check if exists
     public boolean checkIfExists(Integer id){

@@ -36,6 +36,8 @@ public class TeamService {
     }
 
     public void deleteTeam(Integer id) {
-        teamRepository.deleteById(id);
+        Team teamToDelete = teamRepository.findById(id).get();
+        teamToDelete.setActivity(false);
+        updateTeam(teamToDelete,id);    
     }
 }
