@@ -8,11 +8,8 @@ public class Address {
     @Id
     private Integer address_id;
 
-<<<<<<< HEAD
-    private boolean activity_flag;
-=======
     private Boolean active_flag;
->>>>>>> a2bbd440a7a6e6b77b8ce49890ac6d37c44df448
+
     private String address_line_1;
     private String address_line_2;
     private String address_line_3;
